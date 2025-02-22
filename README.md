@@ -19,8 +19,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
+Then run:
+
 ```bash
-uv run --python 3.9 kbps-analyzer.py "path/to/folder/or/file" --write
+uv run --python 3.9 kbps-analyzer.py "path/to/folder/or/file"
 ```
 
 ### With Python 3.9
@@ -30,10 +32,12 @@ pip install mutagen numpy librosa matplotlib tqdm rich
 python kbps-analyzer.py "path/to/folder/or/file" --write
 ```
 
-Passing `--write` will write the analysed birtate to the file's comment tag in the following format:
 
-Comment tag: `My existing comment` -> `~128kbps My existing comment`
 
-## Note
+## Notes
 
-This method is not 100% accurate, and non-standard encoded comment tags might be overwritten/changed.
+- Passing `--write` will write the analysed birtate to the file's comment tag in the following format:
+
+    Comment tag: `My existing comment` -> `~128kbps My existing comment`
+
+- This method is not 100% accurate, and non-standard encoded comment tags might be overwritten/changed.
